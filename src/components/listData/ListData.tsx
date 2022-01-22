@@ -1,40 +1,13 @@
 import  "./listData.css";
-import React, { useCallback, useEffect, useState } from 'react'
-import { Container, Grid,  TablePagination } from "@material-ui/core";
+import React, { useEffect, useState } from 'react'
+import { Container, Grid } from "@material-ui/core";
 import { LinearProgress } from '@material-ui/core';
 import ListItem from './ListItem';
 import axios from 'axios';
 const { useDebounce } =  require("use-lodash-debounce")
 
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: "flex",
-//   },
-//   toolbar: {
-//     paddingRight: 24, // keep right padding when drawer closed
-//   },
-//   appBarSpacer: {
-//     minHeight: theme.spacing(13),
-//     [theme.breakpoints.up("sm")]: {
-//       minHeight: theme.spacing(14),
-//     },
-//   },
-//   content: {
-//     flexGrow: 1,
-//     height: "100vh",
-//     overflow: "auto",
-//   },
-//   container: {
-//     minHeight: "77vh",
-//     paddingTop: theme.spacing(1),
-//     paddingBottom: theme.spacing(1),
-//     [theme.breakpoints.up("sm")]: {
-//       paddingTop: theme.spacing(4),
-//       padding: theme.spacing(4),
-//     },
-//   },
-// }));
+
 
 export interface anime {
   mal_id: number;
@@ -50,26 +23,12 @@ const ListData = () => {
 
     const debouncedValue = useDebounce(searchText, 2500);
     // 
-    const [page, setPage] = React.useState(1);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-    const handleChangePage = (
-      event: React.MouseEvent<HTMLButtonElement> | null,
-      newPage: number,
-    ) => {
-      setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (
-      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    ) => {
-      setRowsPerPage(parseInt(event.target.value, 10));
-      setPage(0);
-    };
+    
 
     const getSearchResults = async () => {
         try {
-            const {data: { results }} = await axios.get(`https://api.jikan.moe/v3/search/anime?q=${searchText}&page=${page}`);
+            const {data: { results }} = await axios.get(`https://api.jikan.moe/v3/search/anime?q=${searchText}`);
             setLoading(false)
             setSearchResult(results)
             console.log('hey result')
@@ -80,7 +39,7 @@ const ListData = () => {
     }
 
     useEffect(()=> {
-        getSearchResults()
+        getSearchResults();
     }, [debouncedValue])
 
    

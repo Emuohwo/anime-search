@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams, Navigate } from 'react-router-dom';
-import { Container, Grid, CardMedia, Typography, colors, Link, LinearProgress } from "@material-ui/core";
+import { useParams } from 'react-router-dom';
+import { Container, Grid, CardMedia, Typography, LinearProgress } from "@material-ui/core";
 import "./animeById.css";
 import Header from '../header/Header';
 
