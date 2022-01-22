@@ -18,11 +18,12 @@ export interface anime {
 
 const ListData = () => {
     const [loading, setLoading] = useState(true)
-    const [searchText, setSearchText] = useState('air')
+    const [searchText, setSearchText] = useState<string>('air')
     const [searchResult, setSearchResult] = useState([]);
 
     const debouncedValue = useDebounce(searchText, 2500);
     // 
+    console.log('debouncedValue', debouncedValue);
 
     
 
@@ -40,6 +41,7 @@ const ListData = () => {
 
     useEffect(()=> {
         getSearchResults();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debouncedValue])
 
    
