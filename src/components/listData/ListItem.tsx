@@ -7,10 +7,7 @@ import { CardActionArea } from '@mui/material';
 import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-// export interface IAnimeProps {
-//     title: string;
-//     image_url: string;
-// }
+
 
 export interface IAnimeProps {
     anime: {
