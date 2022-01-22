@@ -1,0 +1,15 @@
+.searchInputWrapper {
+    margin-bottom: 2em;
+}
+
+.searchInputWrapper input {
+    width: 80%;
+    height: 60px;
+    padding: 8px 12px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px #1a488e14;
+    color: #092147;
+    border: 1px solid #f6f9fd;
+    font-size: 20px;
+}

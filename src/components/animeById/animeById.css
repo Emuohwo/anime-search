@@ -1,0 +1,29 @@
+.metric-wrapper {
+    display: flex;
+    gap: 5px;
+    text-align: center;
+}
+
+.metric {
+    width: 120px;
+    margin: 0 3px;
+    padding: 8px;
+}
+
+.metric.users{ background: #97cff5; color: #7b98ac;}
+.metric.shared{ background: #f597ae; color: #b37786;}
+.metric.popularity{ background: #f5ef97; color: #a7ac7b;}
+.metric.members{ background: #97f5d6; color: #7baca0;}
+
+.goBack {
+    text-decoration: none;
+    font-size: 20px;
+    background: blue;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.goBack:hover {
+    background: rgba(0, 0, 255, 0.459);
+}
